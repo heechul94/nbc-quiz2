@@ -1,0 +1,33 @@
+.articleMiddle {
+  margin: 1rem 0;
+}
+
+.content {
+  padding: 1rem;
+  margin: 0 auto;
+  word-wrap: break-word;
+  line-height: 2rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff80;
+  backdrop-filter: blur(1px);
+  box-shadow: 0rem 0.1rem 0.4rem #00000050;
+}
+
+.articleBottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 0.4rem 0.5rem;
+  margin-right: 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff80;
+  backdrop-filter: blur(1px);
+  box-shadow: 0rem 0.1rem 0.4rem #00000050;
+  cursor: pointer;
+}

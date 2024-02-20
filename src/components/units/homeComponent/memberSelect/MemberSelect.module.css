@@ -1,0 +1,41 @@
+.navigation {
+  margin: 1rem;
+}
+
+.memberBox {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  padding: 0.5rem 1rem;
+  background-color: inherit;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.아이네 {
+  background-color: #8a2be2;
+}
+
+.징버거 {
+  background-color: #f0a957;
+}
+
+.릴파 {
+  background-color: #443965;
+}
+
+.주르르 {
+  background-color: #be185d;
+}
+
+.고세구 {
+  background-color: #467ec6;
+}
+
+.비챤 {
+  background-color: #95c100;
+}

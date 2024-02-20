@@ -1,0 +1,51 @@
+.wrapper {
+  max-width: 900px;
+  margin: 1rem auto;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.letterHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.userWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+img {
+  width: 3rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.userWrapper > p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content {
+  padding: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

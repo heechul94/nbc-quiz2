@@ -1,0 +1,38 @@
+.articleWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.anchor {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #00000050;
+  backdrop-filter: blur(1px);
+  box-shadow: 0rem 0.1rem 0.4rem #00000050;
+}
+
+.article {
+  width: 80%;
+  padding: 1rem;
+  align-self: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #00000050;
+  backdrop-filter: blur(5px);
+  box-shadow: 0rem 0.1rem 1rem #00000050;
+}
+
+.articleTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}

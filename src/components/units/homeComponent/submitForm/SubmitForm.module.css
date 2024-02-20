@@ -1,0 +1,79 @@
+.submitForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  padding: 1rem;
+  width: 20rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff40;
+}
+
+.formTitle {
+  align-self: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #00000050;
+}
+
+input:focus {
+  outline: none;
+  background-color: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #00000050;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  background-color: none;
+}
+
+textarea::placeholder {
+  color: white;
+}
+
+select {
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #00000050;
+}
+
+select:focus {
+  outline: none;
+}
+
+.submitButton {
+  padding: 0.3rem;
+  width: 100%;
+  background-color: #008d62;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
