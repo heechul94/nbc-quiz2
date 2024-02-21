@@ -8,7 +8,7 @@ const Article = ({ item }) => {
       <Link to={`detail/${item.id}`}>
         <div className={styles.letterHeader}>
           <div className={styles.userWrapper}>
-            <img src={item.profile || defaultImage} alt="profile" />
+            <img src={item.avatar || defaultImage} alt="avatar" />
             <p>{item.nickname}</p>
           </div>
           <div className={styles.titleWrapper}>

@@ -16,6 +16,11 @@
   color: white;
 }
 
+.nickname {
+  margin-bottom: 1rem;
+  color: white;
+}
+
 input {
   width: 100%;
   padding: 0.5rem;

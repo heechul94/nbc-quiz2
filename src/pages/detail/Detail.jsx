@@ -46,7 +46,7 @@ const Detail = () => {
       <article className={styles.article}>
         <div className={styles.articleTop}>
           <div>
-            <img src={letter.profile || defaultImage} alt="profile" />
+            <img src={letter.avatar || defaultImage} alt="avatar" />
             <span>{letter.nickname}</span>
           </div>
           <span>{letter.createdAt.split(" ")[0]}</span>

@@ -21,7 +21,7 @@
   justify-content: flex-end;
 }
 
-button {
+.articleBottom > button {
   padding: 0.4rem 0.5rem;
   margin-right: 1rem;
   color: white;

@@ -5,13 +5,16 @@ import { submitValidate } from "../../../../util/submitValidate";
 import styles from "./SubmitForm.module.css";
 
 const SubmitForm = () => {
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = {
-      profile: "",
-      nickname: event.target.nickName.value,
+      userId: userInfo.userId,
+      avatar: userInfo.avatar || "",
+      nickname: userInfo.nickname,
       content: event.target.content.value,
       writedTo: event.target.member.value,
       createdAt: getDate(),
@@ -26,13 +29,7 @@ const SubmitForm = () => {
   return (
     <form className={styles.submitForm} onSubmit={onSubmit}>
       <p className={styles.formTitle}>응원의 글을 남겨주세요!</p>
-      <label>
-        <input
-          name="nickName"
-          placeholder="닉네임을 입력해주세요"
-          maxLength={"12"}
-        />
-      </label>
+      <p className={styles.nickname}>{userInfo?.nickname}</p>
       <label>
         <textarea
           name="content"

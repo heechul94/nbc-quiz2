@@ -1,10 +1,14 @@
 .header {
-  margin: 2rem;
-  padding: 3rem;
-  background-image: url("https://i.namu.wiki/i/MOoZ81OSviXfnnSM6uRNIEs_HSC0giiIMonUjrhzdPEkx2PSxy0qGfEGHXpORwH4hcB1N-gO_YiX4iw93RwFOm4lAKpvSfrv01_LBuzq_FN7BEr8-PP9iIdu_nYqP5IaLFKLB3A5goPpQh7TRg_vuw.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.button {
+  margin-right: 0.9rem;
+  color: white;
+  border: none;
+  background-color: inherit;
 }
 
 main {

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import api from "../../apis/api";
+import api from "../../apis/dbApi";
 
 const initialState = {
   fanLetters: [],
@@ -64,69 +64,58 @@ const fanLetters = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(__getFanLetters.pending, (state, action) => {
-        console.log("pending : ", action);
+      .addCase(__getFanLetters.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
       })
       .addCase(__getFanLetters.fulfilled, (state, action) => {
-        console.log("fulfilled : ", action);
         state.isLoading = false;
         state.isError = false;
         state.fanLetters = action.payload;
       })
       .addCase(__getFanLetters.rejected, (state, action) => {
-        console.log("rejected : ", action);
         state.isLoading = false;
         state.isError = true;
         state.error = action.payload;
       });
     builder
-      .addCase(__postFanLetters.pending, (state, action) => {
-        console.log("pending : ", action);
+      .addCase(__postFanLetters.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
       })
       .addCase(__postFanLetters.fulfilled, (state, action) => {
-        console.log("fulfilled : ", action);
         state.isLoading = false;
         state.isError = false;
         state.fanLetters.push(action.payload);
       })
       .addCase(__postFanLetters.rejected, (state, action) => {
-        console.log("rejected : ", action);
         state.isLoading = false;
         state.isError = true;
         state.error = action.payload;
       });
     builder
-      .addCase(__patchFanLetters.pending, (state, action) => {
-        console.log("pending : ", action);
+      .addCase(__patchFanLetters.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
       })
       .addCase(__patchFanLetters.fulfilled, (state, action) => {
-        console.log("fulfilled : ", action);
         state.isLoading = false;
         state.isError = false;
-        state.fanLetters.map((letter) =>
+        state.fanLetters = state.fanLetters.map((letter) =>
           letter.id === action.payload.id ? action.payload : letter
         );
       })
       .addCase(__patchFanLetters.rejected, (state, action) => {
-        console.log("rejected : ", action);
         state.isLoading = false;
         state.isError = true;
         state.error = action.payload;
       });
     builder
-      .addCase(__deleteFanLetters.pending, (state, action) => {
-        console.log("pending : ", action);
+      .addCase(__deleteFanLetters.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
       })
       .addCase(__deleteFanLetters.fulfilled, (state, action) => {
-        console.log("fulfilled : ", action);
         state.isLoading = false;
         state.isError = false;
         state.fanLetters = state.fanLetters.filter(
@@ -134,7 +123,6 @@ const fanLetters = createSlice({
         );
       })
       .addCase(__deleteFanLetters.rejected, (state, action) => {
-        console.log("rejected : ", action);
         state.isLoading = false;
         state.isError = true;
         state.error = action.payload;
