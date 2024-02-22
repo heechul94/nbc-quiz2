@@ -1,23 +1,24 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { __postFanLetters } from "../../../../redux/modules/fanLettersSlice";
-import { getDate } from "../../../../util/getDate";
 import { submitValidate } from "../../../../util/submitValidate";
 import styles from "./SubmitForm.module.css";
 
 const SubmitForm = () => {
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-
+  const { userId, avatar, nickname } = useSelector((state) => {
+    console.log(state.user.userInfo);
+    return state.user.userInfo;
+  });
   const dispatch = useDispatch();
 
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = {
-      userId: userInfo.userId,
-      avatar: userInfo.avatar || "",
-      nickname: userInfo.nickname,
+      userId,
+      avatar: avatar || "",
+      nickname,
       content: event.target.content.value,
       writedTo: event.target.member.value,
-      createdAt: getDate(),
+      createdAt: new Date().toString(),
     };
     const validatedData = submitValidate(formData);
     if (validatedData) {
@@ -29,7 +30,7 @@ const SubmitForm = () => {
   return (
     <form className={styles.submitForm} onSubmit={onSubmit}>
       <p className={styles.formTitle}>응원의 글을 남겨주세요!</p>
-      <p className={styles.nickname}>{userInfo?.nickname}</p>
+      <p className={styles.nickname}>{nickname}</p>
       <label>
         <textarea
           name="content"

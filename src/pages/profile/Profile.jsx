@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 import styles from "./Profile.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { __patchProfile } from "../../redux/modules/authSlice";
 
 const Profile = () => {
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const accessToken = localStorage.getItem("accessToken");
+  const { userInfo } = useSelector((state) => state.user);
 
   const [isEdit, setIsEdit] = useState(false);
   const [imageUrl, setImageUrl] = useState(userInfo.avatar);
   const [changedAvatar, setChangedAvatar] = useState(null);
-  const [changedNickname, setChangedNickname] = useState("");
+  const [changedNickname, setChangedNickname] = useState(userInfo.nickname);
 
   const fileRef = useRef(null);
   const dispatch = useDispatch();
@@ -31,11 +31,10 @@ const Profile = () => {
   };
 
   const onClickEdit = () => {
-    if (changedAvatar === null && changedNickname === "") {
+    if (changedAvatar === null && changedNickname === userInfo.nickname) {
       alert("변경사항이 없습니다.");
       return;
     }
-
     const editData = {
       edited: {
         nickname: changedNickname,
@@ -44,6 +43,7 @@ const Profile = () => {
       accessToken,
     };
     dispatch(__patchProfile(editData));
+    isEditToggle();
   };
 
   return (
@@ -61,7 +61,11 @@ const Profile = () => {
         <h1>프로필 관리</h1>
         {isEdit ? (
           <>
-            <img src={imageUrl} alt="avatar" onClick={onClickImage} />
+            <img
+              src={imageUrl || userInfo.avatar}
+              alt="avatar"
+              onClick={onClickImage}
+            />
             <input
               type="file"
               style={{ display: "none" }}

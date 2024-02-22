@@ -12,7 +12,7 @@ instance.interceptors.request.use(
 
   // 오류 요청을 보내기 전 수행되는 함수
   function (error) {
-    console.log("인터셉터 요청 오류");
+    console.log("인터셉터 요청 오류", error);
     return Promise.reject(error);
   }
 );
@@ -22,23 +22,10 @@ instance.interceptors.response.use(
   function (response) {
     const url = response.config.url.split("?")[0];
     if (url === "/register") alert(response.data.message);
-    if (url === "/login") {
-      const accessToken = response.data.accessToken;
-      const userInfo = {
-        userId: response.data.userId,
-        avatar: response.data.avatar,
-        nickname: response.data.nickname,
-      };
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    }
     return response;
   },
   // 오류 응답을 내보내기 전 수행되는 함수
   function (error) {
-    alert(error.response.data.message);
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("userInfo");
     return Promise.reject(error);
   }
 );

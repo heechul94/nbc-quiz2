@@ -3,20 +3,21 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
 import {
   __deleteFanLetters,
+  __getFanLetters,
   __patchFanLetters,
 } from "../../redux/modules/fanLettersSlice";
 import defaultImage from "../../assets/hi.webp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EditContent from "../../components/units/detailComponent/edit/EditContent";
 import DetailContent from "../../components/units/detailComponent/content/DetailContent";
+import { getDate } from "../../util/getDate";
 
 const Detail = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [content, setContent] = useState("");
 
   const { id } = useParams();
-  const { fanLetters } = useSelector((state) => state.fanLetters);
-  const letter = fanLetters.find((letter) => letter.id === id);
+  const { fanLetters, isLoading } = useSelector((state) => state.fanLetters);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -38,6 +39,15 @@ const Detail = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    dispatch(__getFanLetters());
+  }, []);
+
+  if (isLoading) {
+    return <p>로딩중...</p>;
+  }
+  const letter = fanLetters.find((letter) => letter.id === id);
+
   return (
     <div className={styles.articleWrapper}>
       <Link className={styles.anchor} to="/">
@@ -49,7 +59,7 @@ const Detail = () => {
             <img src={letter.avatar || defaultImage} alt="avatar" />
             <span>{letter.nickname}</span>
           </div>
-          <span>{letter.createdAt.split(" ")[0]}</span>
+          <span>{getDate(letter.createdAt)}</span>
         </div>
         <span>To : {letter.writedTo}</span>
         {isEdit ? (
@@ -61,6 +71,7 @@ const Detail = () => {
           />
         ) : (
           <DetailContent
+            userId={letter.userId}
             content={letter.content}
             onEditClick={onClickEdit}
             onClickDelete={onClickDelete}

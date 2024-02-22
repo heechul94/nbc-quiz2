@@ -1,14 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styles from "./LoginForm.module.css";
 import { __postLogin } from "../../../../redux/modules/authSlice";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const LoginForm = ({ formToggle }) => {
-  const { isLoggedIn } = useSelector((state) => state.user);
-
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const onSubmitLogin = (event) => {
     event.preventDefault();
@@ -19,10 +14,6 @@ const LoginForm = ({ formToggle }) => {
     dispatch(__postLogin(loginData));
     event.target.reset();
   };
-
-  useEffect(() => {
-    if (isLoggedIn) navigate("/");
-  }, [isLoggedIn]);
 
   return (
     <div className={styles.loginWrapper}>

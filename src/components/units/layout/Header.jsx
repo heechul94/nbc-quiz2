@@ -13,8 +13,7 @@ const Header = () => {
   };
 
   const onClickLogout = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("userInfo");
+    localStorage.clear();
     dispatch(setIsLoggedIn(false));
     dispatch(setUserInfo(null));
   };

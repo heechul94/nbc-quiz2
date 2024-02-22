@@ -10,8 +10,8 @@ import { __getUser } from "../../redux/modules/authSlice";
 const Home = () => {
   const [selected, setSelected] = useState("아이네");
   const { fanLetters } = useSelector((state) => state.fanLetters);
-  const accessToken = localStorage.getItem("accessToken");
-  console.log(accessToken);
+
+  const token = localStorage.getItem("accessToken");
 
   const dispatch = useDispatch();
 
@@ -19,9 +19,10 @@ const Home = () => {
     (letter) => letter.writedTo === selected
   );
 
+  // useSessionValidate();
   useEffect(() => {
     dispatch(__getFanLetters());
-    dispatch(__getUser(accessToken));
+    dispatch(__getUser(token));
   }, []);
 
   return (

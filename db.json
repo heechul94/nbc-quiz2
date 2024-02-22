@@ -1,47 +1,31 @@
 {
   "fanletters": [
     {
-      "id": "1",
-      "avatar": "",
-      "nickname": "인사민수",
-      "title": "안녕",
-      "content": "안녕하시렵니까12",
+      "id": "4bb7",
+      "userId": "yang",
+      "avatar": "https://react-jwt-avatar.s3.ap-northeast-2.amazonaws.com/24-02-21/a4c1bcd3-4806-4097-95b9-0e79cd9ecb09.jpg",
+      "nickname": "34521",
+      "content": "1",
       "writedTo": "아이네",
-      "createdAt": ""
+      "createdAt": "Thu Feb 22 2024 11:55:27 GMT+0900 (한국 표준시)"
     },
     {
-      "id": "2",
-      "avatar": "",
-      "nickname": "인사민수2",
-      "title": "하시",
-      "content": "안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까?",
+      "id": "d377",
+      "userId": "yang",
+      "avatar": "https://react-jwt-avatar.s3.ap-northeast-2.amazonaws.com/24-02-21/a4c1bcd3-4806-4097-95b9-0e79cd9ecb09.jpg",
+      "nickname": "34521",
+      "content": "2",
       "writedTo": "아이네",
-      "createdAt": ""
+      "createdAt": "Thu Feb 22 2024 11:57:19 GMT+0900 (한국 표준시)"
     },
     {
-      "id": "3",
-      "avatar": "",
-      "nickname": "인사민수3",
-      "title": "렵니까",
-      "content": "안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까?\n안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까? 안녕하시렵니까?",
-      "writedTo": "아이네",
-      "createdAt": ""
-    },
-    {
-      "id": "b4773ea9-9fcc-4f5d-b23e-10d3cb33475b",
-      "avatar": "",
+      "id": "1057",
+      "userId": "yang",
+      "avatar": "https://react-jwt-avatar.s3.ap-northeast-2.amazonaws.com/24-02-22/6ce887bd-66ad-4136-9122-3ea797dd49be.jpg",
       "nickname": "민수",
-      "content": "나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!!나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민수다!! 나는 민",
+      "content": "1234",
       "writedTo": "아이네",
-      "createdAt": "2024-02-20 03:15"
-    },
-    {
-      "id": "88b9",
-      "avatar": "",
-      "nickname": "123",
-      "content": "123123",
-      "writedTo": "징버거",
-      "createdAt": "2024-02-20 03:16"
+      "createdAt": "Thu Feb 22 2024 12:19:13 GMT+0900 (한국 표준시)"
     }
   ]
 }

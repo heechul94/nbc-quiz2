@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Article.module.css";
 import defaultImage from "../../../../assets/hi.webp";
+import { getDate } from "../../../../util/getDate";
 
 const Article = ({ item }) => {
   return (
@@ -13,7 +14,7 @@ const Article = ({ item }) => {
           </div>
           <div className={styles.titleWrapper}>
             <h1>{item.title}</h1>
-            <p>{item.createdAt || "2024.02.01"}</p>
+            <p>{getDate(item.createdAt).split(" ")[0]}</p>
           </div>
         </div>
         <div>

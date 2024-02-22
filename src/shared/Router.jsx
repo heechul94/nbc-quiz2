@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Detail from "../pages/detail/Detail";
 import Layout from "../components/units/layout/Layout";
@@ -17,13 +17,16 @@ const Router = () => {
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="*" element={<Navigate replace to={"/"} />} />
             </Route>
             <Route path="/detail/:id" element={<Detail />} />
           </>
         ) : (
-          <Route path="/login" element={<Login />} />
+          <>
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate replace to={"/login"} />} />
+          </>
         )}
-        <Route path="*" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

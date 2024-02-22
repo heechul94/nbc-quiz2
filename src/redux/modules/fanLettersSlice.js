@@ -3,17 +3,23 @@ import api from "../../apis/dbApi";
 
 const initialState = {
   fanLetters: [],
-  isLoading: false,
+  isLoading: true,
   isError: false,
   error: null,
+};
+
+const getFanLettersFromDB = async () => {
+  const { data } = await api.get("/fanletters");
+  console.log(data);
+  return data;
 };
 
 export const __getFanLetters = createAsyncThunk(
   "getFanLetters",
   async (_, thunkAPI) => {
     try {
-      const response = await api.get("/fanletters");
-      return thunkAPI.fulfillWithValue(response.data);
+      const letters = await getFanLettersFromDB();
+      return thunkAPI.fulfillWithValue(letters);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
